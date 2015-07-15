@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'java_study'
+    version = '0.1.0'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    // group:name:version
+
+    // spring
+    compile("org.springframework.boot:spring-boot-starter-amqp")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
+    compile("com.fasterxml.jackson.core:jackson-databind")
+    compile("org.projectlombok:lombok:1.14.8")
+    compile("com.google.guava:guava:18.0")
+    compile("redis.clients:jedis")
+
+    // test
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
+final String DEFAULT_PROFILE = 'local'
+
+allprojects {
+    if (!project.hasProperty('profile') || !profile) {
+        ext.profile = DEFAULT_PROFILE
+    }
+
+    if ( ["dev", "production"].contains(profile) ) {
+        run { systemProperties["spring.profiles.active"] = profile }
+    } else {
+        run { systemProperties["spring.profiles.active"] = DEFAULT_PROFILE }
+    }
+}
