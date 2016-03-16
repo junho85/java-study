@@ -7,10 +7,10 @@ import java.util.Properties;
 
 public class Mail {
     public static void main(String[] args) throws MessagingException, ParseException {
-        // --host=mail.test.com --port=25 --from=abc@test.com --to=test@test.com
-        CommandLineParser parser = new DefaultParser();
+        // ex) --host=mail.test.com --port=25 --from=abc@test.com --to=test@test.com
 
         Options options = new Options();
+
         options.addOption(Option.builder().longOpt("host")
                 .desc("smtp server host")
                 .hasArg()
@@ -30,6 +30,8 @@ public class Mail {
                 .desc("to address")
                 .hasArg()
                 .build());
+
+        CommandLineParser parser = new DefaultParser();
 
         CommandLine line = parser.parse(options, args);
 
