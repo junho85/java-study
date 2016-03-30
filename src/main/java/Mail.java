@@ -6,7 +6,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class Mail {
-    public static void main(String[] args) throws MessagingException, ParseException {
+    public static void main(String[] args) throws MessagingException, ParseException, InterruptedException {
         // ex) --host=mail.test.com --port=25 --from=abc@test.com --to=test@test.com
 
         Options options = new Options();
@@ -48,6 +48,10 @@ public class Mail {
         props.put("mail.smtp.host", host);
         props.put("mail.smtp.port", port);
         props.put("mail.smtp.ssl.protocols", "SSLv2Hello SSLv3");
+//        props.put("mail.smtp.ssl.protocols", "SSLv2Hello TLSv1"); // 서버 SSLv3 지원 안 할 때 성공
+//        props.put("mail.smtp.ssl.protocols", "SSLv3");
+//        props.put("mail.smtp.ssl.protocols", "TLSv1");
+
 
         Session session = Session.getDefaultInstance(props, null);
         session.setDebug(true);
@@ -67,6 +71,8 @@ public class Mail {
         transport.connect();
 
         transport.sendMessage(message, message.getAllRecipients());
+
+        Thread.sleep(10000);
         transport.close();
     }
 }
