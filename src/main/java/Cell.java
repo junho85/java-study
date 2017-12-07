@@ -18,7 +18,10 @@ public class Cell {
             Thread.sleep(1000);
             i++;
         } while (true);
+
     }
+
+
 
     private static void round(List<String> cells) {
         int size = cells.size();

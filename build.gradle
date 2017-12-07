@@ -40,6 +40,8 @@ dependencies {
 
     compile("commons-lang:commons-lang:2.6")
 
+    compile group: 'dnsjava', name: 'dnsjava', version: '2.1.7'
+
     // javamail
     compile("com.sun.mail:javax.mail:1.5.5")
 
