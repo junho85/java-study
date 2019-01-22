@@ -48,6 +48,8 @@ dependencies {
 
     // test
     testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.10.0'
 }
 
 task wrapper(type: Wrapper) {
