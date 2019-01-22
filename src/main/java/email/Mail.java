@@ -1,3 +1,5 @@
+package email;
+
 import org.apache.commons.cli.*;
 
 import javax.mail.*;
