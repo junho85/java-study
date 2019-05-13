@@ -13,6 +13,7 @@ public class ConvertArrayToListTest {
     public void test1() {
         String[] array = {"1", "2", "3", "4"};
         List<String> strings = Arrays.asList(array);
+//        strings.add("5"); // fail. immutable
 
         System.out.println(strings);
     }
@@ -21,6 +22,7 @@ public class ConvertArrayToListTest {
     public void test2() {
         String[] array = {"1", "2", "3", "4"};
         List<String> strings = new ArrayList<>(Arrays.asList(array));
+        strings.add("5");
 
         System.out.println(strings);
     }
@@ -31,6 +33,7 @@ public class ConvertArrayToListTest {
         List<String> strings = new ArrayList<>();
 
         Collections.addAll(strings, array);
+        strings.add("5");
 
         System.out.println(strings);
     }
@@ -52,6 +55,7 @@ public class ConvertArrayToListTest {
     public void test5() {
         String[] array = {"1", "2", "3", "4"};
         List<String> strings = Arrays.stream(array).collect(Collectors.toList());
+        strings.add("5");
 
         System.out.println(strings);
     }
