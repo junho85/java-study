@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ConvertCollectionToArray {
+public class ConvertCollectionToArrayTest {
     private Collection<String> getTestCollection() {
         Collection<String> stringCollection = new ArrayList();
         stringCollection.add("1");
