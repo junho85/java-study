@@ -1,8 +1,11 @@
 package email;
 
+import com.sun.mail.smtp.SMTPTransport;
 import org.apache.commons.cli.*;
 
-import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
@@ -68,11 +71,13 @@ public class Mail {
         message.setSubject(subject);
         message.setText(body);
 
-        Transport transport = session.getTransport("smtp");
+        SMTPTransport transport = (SMTPTransport)session.getTransport("smtp");
 
         transport.connect();
 
         transport.sendMessage(message, message.getAllRecipients());
+
+        System.out.println(transport.getLastReturnCode());
 
         Thread.sleep(10000);
         transport.close();
