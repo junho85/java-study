@@ -21,6 +21,10 @@ dependencies {
 
     compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
 
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
+
     compile group: 'redis.clients', name: 'jedis', version: '3.1.0'
 
     compile group: 'dnsjava', name: 'dnsjava', version: '2.1.9'
