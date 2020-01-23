@@ -1,4 +1,4 @@
-package email;
+package email.javamail;
 
 import com.sun.mail.smtp.*;
 import com.sun.mail.util.MailConnectException;
@@ -10,58 +10,18 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class JavamailTest {
+
     @Test
-    public void test_normal() {
-//        final String host = "gmail-smtp-in.l.google.com.";
-        final String host = "mx1.hanmail.net";
-
-        final String from = "junho85-test@gmail.com";
-        final String to = "junho85@daum.net";
-
-        Properties properties = System.getProperties();
-
-        properties.setProperty("mail.smtp.host", host);
-
-        Session session = Session.getDefaultInstance(properties);
-        session.setDebug(true);
-
-        SMTPTransport transport;
-        try {
-            transport = (SMTPTransport)session.getTransport("smtp");
-            transport.setReportSuccess(true);
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        try {
-            MimeMessage message = new MimeMessage(session);
-
-            message.setFrom(new InternetAddress(from)); // from
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to)); // recipients
-            String subject = "This is subject";
-            message.setSubject(subject); // subject
-            message.setText("This is body"); // content
-
-            Transport.send(message); // send
-
-            System.out.println("Sent message successfully");
-
-            System.out.println("reportsuccess:" + transport.getReportSuccess());
-        } catch (SMTPAddressSucceededException e) {
-            System.out.println("SMTPAddressSucceededException");
-            System.out.println(e.getReturnCode());
-        } catch (MessagingException e) {
-            System.out.println(e.getCause());
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
+    public void test_mx_fail_fallback() {
+        // TODO 실패하는 mx 포함하는 리스트 만들어서 재시도 하도록 로직
+        // timeout?
     }
 
     @Test
     public void test_wrong_host() {
 //        final String host = "gmail-smtp-in.l.google.com.";
-        final String host = "mx11.hanmail.net";
+//        final String host = "mx11.hanmail.net";
+        final String host = "kairos-vmdev.mail.daum.net";
 
         final String from = "junho85-test@gmail.com";
         final String to = "junho85@daum.net";
@@ -69,6 +29,7 @@ public class JavamailTest {
         Properties properties = System.getProperties();
 
         properties.setProperty("mail.smtp.host", host);
+        properties.setProperty("mail.smtp.connectiontimeout", host);
 
         Session session = Session.getDefaultInstance(properties);
         session.setDebug(true);
@@ -90,6 +51,8 @@ public class JavamailTest {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
+
+
     }
 
     @Test
