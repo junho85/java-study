@@ -1,10 +1,17 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'java'
+    id 'java-library'
     id 'idea'
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version "1.0.9.RELEASE"
 }
 
-apply plugin: 'java'
-apply plugin: 'io.spring.dependency-management'
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+version = '1.0.0'
 
 repositories {
     mavenLocal()

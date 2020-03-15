@@ -1,12 +1,12 @@
 package set;
 
-import com.google.common.collect.Sets;
-
+import java.util.HashSet;
 import java.util.Set;
 
-public class SetTest {
+public class HashSetTest {
     public static void main(String[] args) {
-        Set<String> sets = Sets.newHashSet();
+//        Set<String> sets = Sets.newHashSet(); // Guava
+        Set<String> sets = new HashSet<>();
 
         sets.add(null);
         sets.add(null);
