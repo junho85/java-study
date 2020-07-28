@@ -22,20 +22,17 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-    compile group: 'com.google.guava', name: 'guava', version: '28.0-jre'
+    implementation group: 'com.google.guava', name: 'guava', version: '28.0-jre'
+    implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+    implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
+    implementation group: 'redis.clients', name: 'jedis', version: '3.1.0'
+    implementation group: 'dnsjava', name: 'dnsjava', version: '2.1.9'
 
-    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
-    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
-
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
-
-    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
-
-    compile group: 'redis.clients', name: 'jedis', version: '3.1.0'
-
-    compile group: 'dnsjava', name: 'dnsjava', version: '2.1.9'
-
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
 }
