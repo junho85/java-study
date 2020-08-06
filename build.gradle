@@ -29,6 +29,8 @@ dependencies {
     implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
     implementation group: 'redis.clients', name: 'jedis', version: '3.1.0'
     implementation group: 'dnsjava', name: 'dnsjava', version: '2.1.9'
+    implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.3.8.RELEASE'
+
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
