@@ -12,27 +12,65 @@ import java.util.stream.Stream;
 
 public class DistinctTest {
     @Test
-    public void test1() {
+    public void test_set() {
+        List<String> list = Arrays.asList("홍길동", "김삿갓", "홍길동", "김개똥");
+        HashSet<String> set = new HashSet<>();
+        for (String name : list) {
+            set.add(name);
+        }
+        for (String name : set) {
+            System.out.println(name);
+        }
+    }
+
+    @Test
+    public void test_set1() {
+        List<String> list = Arrays.asList("홍길동", "김삿갓", "홍길동", "김개똥");
+        HashSet<String> set = new HashSet<>();
+        set.addAll(list);
+        for (String name : set) {
+            System.out.println(name);
+        }
+    }
+
+    @Test
+    public void test_set2() {
+        List<String> list = Arrays.asList("홍길동", "김삿갓", "홍길동", "김개똥");
+        HashSet<String> set = new HashSet<>(list);
+        for (String name : set) {
+            System.out.println(name);
+        }
+    }
+
+    @Test
+    public void test_set3() {
+        List<String> list = Arrays.asList("홍길동", "김삿갓", "홍길동", "김개똥");
+        HashSet<String> set = new HashSet<>(list);
+        set.forEach(System.out::println);
+    }
+
+    @Test
+    public void test_set4() {
         List<String> list = Arrays.asList("홍길동", "김삿갓", "홍길동", "김개똥");
         new HashSet<>(list).forEach(System.out::println);
     }
 
     @Test
-    public void test2() {
+    public void test_distinct() {
         Arrays.asList("홍길동", "김삿갓", "홍길동", "김개똥").stream()
                 .distinct()
                 .forEach(System.out::println);
     }
 
     @Test
-    public void test3() {
+    public void test_distinct2() {
         Stream.of("홍길동", "김삿갓", "홍길동", "김개똥")
                 .distinct()
                 .forEach(System.out::println);
     }
 
     @Test
-    public void test5() {
+    public void test_reactor() {
         Flux.just("홍길동", "김삿갓", "홍길동", "김개똥")
                 .distinct()
                 .doOnNext(System.out::println)
