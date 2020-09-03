@@ -8,7 +8,7 @@ import java.time.ZonedDateTime;
 
 public class OffsetDateTimeAndZonedDateTimeTest {
     @Test
-    public void test() {
+    public void test0() {
         OffsetDateTime oDate = OffsetDateTime.parse("2020-08-20T19:01:02+09:00");
 
         System.out.println(oDate); // 2020-08-20T19:01:02+09:00
@@ -19,7 +19,10 @@ public class OffsetDateTimeAndZonedDateTimeTest {
         System.out.println(oDate.getMinute()); // 1
         System.out.println(oDate.getSecond()); // 2
         System.out.println(oDate.getOffset()); // +09:00
+    }
 
+    @Test
+    public void test() {
         System.out.println("==========");
         ZonedDateTime zDate = ZonedDateTime.parse("2020-08-20T19:01:02+09:00");
 
