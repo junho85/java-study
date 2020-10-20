@@ -4,7 +4,7 @@ import com.sun.mail.smtp.SMTPAddressFailedException;
 import com.sun.mail.smtp.SMTPSendFailedException;
 import com.sun.mail.smtp.SMTPSenderFailedException;
 import com.sun.mail.util.MailConnectException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

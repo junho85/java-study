@@ -1,6 +1,7 @@
 package array;
 
-import org.junit.Test;
+import json.Person;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,5 +13,18 @@ public class ListTest {
         for (String string : strings) {
             System.out.println(string);
         }
+    }
+
+    @Test
+    public void test2() {
+        List<Person> people = Arrays.asList(
+                Person.builder().firstName("June").build(),
+                Person.builder().firstName("June2").build()
+        );
+
+        for (Person person : people) {
+            person.setExtra("extra");
+        }
+        System.out.println(people);
     }
 }

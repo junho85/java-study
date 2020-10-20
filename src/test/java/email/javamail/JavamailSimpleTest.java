@@ -2,7 +2,7 @@ package email.javamail;
 
 import com.sun.mail.smtp.SMTPAddressSucceededException;
 import com.sun.mail.smtp.SMTPTransport;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;

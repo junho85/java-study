@@ -1,6 +1,6 @@
 package net;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocket;

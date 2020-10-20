@@ -1,6 +1,7 @@
 package env;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.text.DecimalFormat;
 import java.util.Optional;

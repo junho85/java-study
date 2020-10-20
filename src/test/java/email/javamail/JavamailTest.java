@@ -2,7 +2,7 @@ package email.javamail;
 
 import com.sun.mail.smtp.*;
 import com.sun.mail.util.MailConnectException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
