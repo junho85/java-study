@@ -10,7 +10,7 @@ public class WebFluxTest {
         WebFluxSample webFluxSample = new WebFluxSample();
 
         Mono<TestResult> testResult = webFluxSample.getPerson(2)
-                .flatMap(person -> webFluxSample.getPerson(1)
+                .flatMap(person -> webFluxSample.getPerson(2)
                         .map(person2 -> TestResult.builder().message("두번째").build())
                         .onErrorReturn(TestResult.builder().message("두번째 오류").build()))
                 .onErrorReturn(TestResult.builder().message("오류").build())
