@@ -4,13 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.AbstractMap;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class HashMapTestTest {
-    
+class HashMapTestExample {
     /**
      * java9 Map.of
      */

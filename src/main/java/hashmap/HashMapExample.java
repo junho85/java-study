@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-public class HashMapTest {
+public class HashMapExample {
     public static void main(String[] args) {
 //        HashMap<String, Integer> map = Maps.newHashMap(); // Guava
         HashMap<String, Integer> map = new HashMap<>();
