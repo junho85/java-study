@@ -9,10 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FreeMarkerTest {
 
@@ -54,6 +51,25 @@ public class FreeMarkerTest {
         String result = out.toString();
         System.out.println(result);
         out.close();
-
     }
+
+    @Test
+    public void test3() throws IOException, TemplateException {
+        Person person = Person.builder()
+                .firstName("길동")
+                .birthday(new Date())
+                .build();
+
+        Configuration cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
+        cfg.setLocale(Locale.KOREA);
+        Template template = new Template("redundant", new StringReader("${firstName}, ${birthday?string('yy-MM-dd a hh:mm')}"), cfg);
+
+        StringWriter out = new StringWriter();
+        template.process(person, out);
+
+        String result = out.toString();
+        System.out.println(result); // 길동, 20-11-26 오후 11:08
+        out.close();
+    }
+
 }
