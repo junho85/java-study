@@ -12,11 +12,11 @@ import java.time.ZonedDateTime;
 @Builder
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class TestJsonObject {
-    String userName;
-    Integer age;
-    String hobby;
+    private String userName;
+    private Integer age;
+    private String hobby;
 
 //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssZ")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
-    ZonedDateTime testDateTime;
+    private ZonedDateTime testDateTime;
 }

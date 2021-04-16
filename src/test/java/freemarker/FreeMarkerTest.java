@@ -14,7 +14,7 @@ import java.util.*;
 public class FreeMarkerTest {
 
     @Test
-    public void test() throws IOException, TemplateException {
+    void test() throws IOException, TemplateException {
         Person person = Person.builder()
                 .firstName("길동")
                 .build();
@@ -31,7 +31,7 @@ public class FreeMarkerTest {
     }
 
     @Test
-    public void test2() throws IOException, TemplateException {
+    void test2() throws IOException, TemplateException {
         List<Person> people = Arrays.asList(
                 Person.builder().firstName("길동").build(),
                 Person.builder().firstName("꺽정").build()
@@ -54,7 +54,7 @@ public class FreeMarkerTest {
     }
 
     @Test
-    public void test3() throws IOException, TemplateException {
+    void test3() throws IOException, TemplateException {
         Person person = Person.builder()
                 .firstName("길동")
                 .birthday(new Date())
@@ -70,6 +70,11 @@ public class FreeMarkerTest {
         String result = out.toString();
         System.out.println(result); // 길동, 20-11-26 오후 11:08
         out.close();
+    }
+
+    @Test
+    void test4() {
+
     }
 
 }
