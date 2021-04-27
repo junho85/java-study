@@ -1,5 +1,6 @@
 package random;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 
 import java.util.Random;
@@ -9,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SomeRandomTest {
 
+    @DisplayName("random number test")
     @RepeatedTest(100)
     void test() {
         Random random = new Random();
