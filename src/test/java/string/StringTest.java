@@ -1,15 +1,20 @@
 package string;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class StringTest {
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+class StringTest {
+    @DisplayName("null to string test")
     @Test
-    public void test() {
-        System.out.println("hello world " + null + " is null");
+    void test_null_to_string() {
+        assertThat("hello world " + null + " is null")
+                .isEqualTo("hello world null is null");
     }
 
     @Test
-    public void test2() {
+    void test2() {
         String str = "hello\nworld\nnice\nto\nmeet\nyou";
 
         System.out.println(str);
@@ -17,7 +22,7 @@ public class StringTest {
     }
 
     @Test
-    public void test3() {
+    void test3() {
         // pool of strings
         System.out.println("== pool of strings ==");
         String a = "aaa";
@@ -46,7 +51,7 @@ public class StringTest {
     }
 
     @Test
-    public void test4() {
+    void test4() {
         String a = "hello ";
         a = a + "world";
         a = a + "nice ";
