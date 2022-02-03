@@ -1,5 +1,6 @@
 package string;
 
+import json.Person;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,11 +15,41 @@ class StringTest {
     }
 
     @Test
+    void test() {
+        int aa = 1;
+        int bb = 1;
+
+        System.out.println(aa == bb); // true
+
+        Integer aaa = Integer.valueOf(1);
+        Integer bbb = Integer.valueOf(1);
+
+        System.out.println(aaa == bbb); // true
+
+        String a = new String("hello world");
+        String b = new String("hello world");
+
+        System.out.println("hello world" == "hello world"); // true
+        System.out.println(a == b); // false
+        System.out.println(a.equals(b)); // true
+    }
+
+    @Test
     void test2() {
         String str = "hello\nworld\nnice\nto\nmeet\nyou";
 
         System.out.println(str);
         System.out.println(str.replaceAll("\\n", "\\\\n"));
+    }
+
+    @Test
+    void removeSpacesTest() {
+        String str = "a b c d";
+        System.out.println(str); // a b c d
+        System.out.println(str.replace(" ", "")); // abcd
+        System.out.println(str.replaceAll("\\s", "")); // abcd
+        System.out.println(str.replaceAll("\\s+", "")); // abcd
+        System.out.println(str.replaceAll(" ", "")); // abcd
     }
 
     @Test
@@ -64,8 +95,42 @@ class StringTest {
         System.out.println(a);
     }
 
+    @Test
+    void test5() {
+        MyTest myTest = new MyTest();
+        myTest.name = "홍길동";
+        myTest.nickname = "홍사부";
+        System.out.println("Hello" + " world " + myTest);
+    }
+
+    @Test
+    void assign_multiple_test() {
+        String one, two, three;
+        one = two = three = "123";
+        String four = "123";
+
+        System.out.println(one.hashCode());
+        System.out.println(two.hashCode());
+        System.out.println(three.hashCode());
+        System.out.println(four.hashCode());
+        System.out.println(one); // 123
+        System.out.println(two); // 123
+        System.out.println(three); // 123
+
+        three = "333";
+
+        System.out.println(one.hashCode());
+        System.out.println(two.hashCode());
+        System.out.println(three.hashCode());
+        System.out.println(one); // 123
+        System.out.println(two); // 123
+        System.out.println(three); // 333
+    }
+
     public static void main(String[] args) {
         String a = "aaa";
         String b = "aaa";
     }
+
+
 }

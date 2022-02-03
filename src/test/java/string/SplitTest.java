@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public class SplitTest {
     @Test
-    public void test() {
+    void test() {
         final String ids = "1,2,3,4,5";
         List<String> strings = Arrays.asList(ids.split(","));
 

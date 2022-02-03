@@ -12,7 +12,7 @@ import static java.util.stream.Collectors.toMap;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
 
-class CollectorTest {
+class CollectorToMapDuplicateTest {
     final List<String> sampleList = Arrays.asList("a", "b", "c", "d", "a");
 
     @Test
